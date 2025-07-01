@@ -28,12 +28,11 @@ HEADERS_DIR			:=		./inc/
 HEADERS_D			:=		./incs/
 
 
-HEADERS				:=		Span.hpp
+HEADERS				:=		MutantStack.hpp
 
 
 
-SRC					:=		main.cpp	\
-							Span.cpp
+SRC					:=		main.cpp
 
 
 # for a new SRC add a new :

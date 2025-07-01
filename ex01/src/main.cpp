@@ -1,32 +1,29 @@
 #include <iostream>
-#include <vector>
-#include "easyfind.hpp"
+#include "Span.hpp"
 
 int main()
 {
-	std::vector<int> vcontainer;
+	try {
 
-	vcontainer.push_back(10);
-	vcontainer.push_back(9);
-	vcontainer.push_back(8);
-	vcontainer.push_back(7);
-	vcontainer.push_back(6);
-	vcontainer.push_back(5);
-	vcontainer.push_back(4);
-	vcontainer.push_back(3);
-	vcontainer.push_back(2);
-	vcontainer.push_back(1);
-	vcontainer.push_back(0);
-	std::vector<int>::iterator	it = vcontainer.end();
+		unsigned int N = 3;
+		Span t(N);
+		// t.print();
+		t.addNumber(1);
+		t.addNumber(3);
+		t.print();
+		std::cout << "t2 print" << std::endl;
 
-	try
-	{
-		it = easyfind(vcontainer, 11);
-	}
-	catch (std::exception &e)
-	{
+		Span t2(N);
+		t2 = t;
+		t2.print();
+		t2.addNumber(8);
+		t2.print();
+		t2.longestSpan();
+		t2.shortestSpan();
+
+
+	} catch (std::exception &e){
 		std::cout << e.what() << std::endl;
 	}
-	std::cout << *it << std::endl;
 	return 0;
 }

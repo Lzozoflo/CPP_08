@@ -6,13 +6,14 @@
 /*   By: fcretin <fcretin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/26 14:27:31 by fcretin           #+#    #+#             */
-/*   Updated: 2025/06/26 14:58:32 by fcretin          ###   ########.fr       */
+/*   Updated: 2025/06/27 16:07:17 by fcretin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SPAN_HPP
 #define SPAN_HPP
 
+#include <vector>
 #include <algorithm>
 #include <iterator>
 #include <iostream>
@@ -44,13 +45,30 @@
 // 	return (it);
 // }
 
-class StockCapped : std::exception
+class StockCapped : public std::exception
 {
 	public :
 		virtual const char *what() const throw(){
 			return  ("Stock Max Reached.");
 		}
-}
+};
+
+class EmptyVector : public std::exception
+{
+	public :
+		virtual const char *what() const throw(){
+			return ("Vector is empty!");
+		}
+};
+
+class NoDistanceFind : public std::exception
+{
+	public :
+		virtual const char *what() const throw(){
+			return ("Need at least two numbers.");
+		}
+};
+
 
 class Span
 {
@@ -60,27 +78,26 @@ class Span
 		/* Canonical */
 		Span( void );
 		Span(const Span &other);
-		Span &operator=(const Span &other);
-		~Span( void );
 
-		int	_MaxStock;
-		int	_ActualStock;
-
+		size_t	_MaxStock;
+		std::vector<int> _vec;
 
 	// }
 	public :
 	// {
 
+		Span &operator=(const Span &other);
 		Span( unsigned int &N );
+		~Span( void );
 
-		void	addNumber();
+		void	addNumber(int nb);
 		void	shortestSpan();
 		void	longestSpan();
 
 		/* bonus */
 		void	randomFill();
 		void	print();
-		void	popNumber;
+		// void	popNumber();
 	// }
 };
 
