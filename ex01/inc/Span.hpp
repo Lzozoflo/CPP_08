@@ -77,25 +77,25 @@ class Span
 
 		/* Canonical */
 		Span( void );
-		Span(const Span &other);
 
 		size_t	_MaxStock;
 		std::vector<int> _vec;
 
-	// }
-	public :
-	// {
+		// }
+		public :
+		// {
 
 		Span &operator=(const Span &other);
-		Span( unsigned int &N );
+		Span(const Span &other);
+		Span( unsigned int N );
 		~Span( void );
 
 		void	addNumber(int nb);
-		void	shortestSpan();
-		void	longestSpan();
+		size_t	shortestSpan();
+		size_t	longestSpan();
 
 		/* bonus */
-		void	randomFill();
+		void	addMultiple(unsigned int i);
 		void	print();
 		// void	popNumber();
 	// }
