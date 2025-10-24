@@ -25,50 +25,6 @@
 #define BLUE  "\033[34m"
 #define YELLOW "\033[33m"
 
-// class NotFoundException: public std::exception
-// {
-// 	public :
-// 		virtual const char* what() const throw() {
-// 			return ("Not found.");
-// 		}
-// };
-
-
-// template <typename T>
-// typename T::iterator	easyfind(T &container, int value)
-// {
-// 	typename T::iterator it;
-
-// 	it = std::find(container.begin(), container.end(), value);
-// 	if (it == container.end())
-// 		throw (NotFoundException());
-// 	return (it);
-// }
-
-class StockCapped : public std::exception
-{
-	public :
-		virtual const char *what() const throw(){
-			return  ("Stock Max Reached.");
-		}
-};
-
-class EmptyVector : public std::exception
-{
-	public :
-		virtual const char *what() const throw(){
-			return ("Vector is empty!");
-		}
-};
-
-class NoDistanceFind : public std::exception
-{
-	public :
-		virtual const char *what() const throw(){
-			return ("Need at least two numbers.");
-		}
-};
-
 
 class Span
 {
@@ -95,9 +51,33 @@ class Span
 		size_t	longestSpan();
 
 		/* bonus */
-		void	addMultiple(unsigned int i);
+		void	addMultiple(unsigned int i, int value);
 		void	print();
-		// void	popNumber();
+
+		class StockCapped : public std::exception
+		{
+			public :
+				virtual const char *what() const throw(){
+					return  ("Stock Max Reached.");
+				}
+		};
+
+		class EmptyVector : public std::exception
+		{
+			public :
+				virtual const char *what() const throw(){
+					return ("Vector is empty!");
+				}
+		};
+
+		class NoDistanceFind : public std::exception
+		{
+			public :
+				virtual const char *what() const throw(){
+					return ("Need at least two numbers.");
+				}
+		};
+
 	// }
 };
 

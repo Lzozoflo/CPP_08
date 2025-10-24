@@ -22,11 +22,11 @@ int main()
 	try
 	{
 		it = easyfind(vcontainer, 11);
+		std::cout << *it << std::endl;
 	}
 	catch (std::exception &e)
 	{
 		std::cout << e.what() << std::endl;
 	}
-	std::cout << *it << std::endl;
 	return 0;
 }

@@ -63,7 +63,7 @@ SRCS				=		$(SRC)
 NAME				=		cpp
 CC					=		c++
 INCLUDES			=		-I$(HEADERS_DIR)
-CPPFLAGS			=		-Wall -Werror -Wextra -std=c++98 $(INCLUDES)
+CPPFLAGS			=		-Wall -Werror -Wextra -std=c++98 $(INCLUDES) -g3
 CPPFLAGSS			=		-Weverything						 -Wno-padded -Wno-documentation-unknown-command -Wno-documentation -std=c++98 $(INCLUDES)
 NPD					=		--no-print-directory
 MAKE				:=		$(MAKE) -j $(NPD)

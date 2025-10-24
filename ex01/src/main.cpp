@@ -24,10 +24,12 @@ int main()
 	} catch (std::exception &e){
 		std::cout << e.what() << std::endl;
 	}
+
 	try
 	{
 		Span span3(4);
-		span3.addMultiple(5);
+		std::cout << "shortestSpan() " << span3.shortestSpan() << std::endl;
+		span3.addMultiple(55, 55);
 		span3.print();
 	}
 	catch(const std::exception& e)
