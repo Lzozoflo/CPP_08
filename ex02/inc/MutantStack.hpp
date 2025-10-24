@@ -17,10 +17,12 @@ template<typename T>
 class MutantStack : public std::stack<T>
 {
 	public:
-		MutantStack( void ){}
+		MutantStack( void ) {}
 		MutantStack( const MutantStack &other ) : std::stack<T>(other) {}
 		MutantStack &operator=( MutantStack &other ) {
-			this->std::stack<T>::operator=(other);
+			if (this != &other)
+				this->std::stack<T>::operator=(other);
+			return (*this);
 		}
 		~MutantStack( void ) {}
 
