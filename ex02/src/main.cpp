@@ -35,6 +35,7 @@ int main()
 	mstack.push(5);
 	mstack.push(737);
 	mstack.push(0);
+	std::cout << "\niterator";
 	MutantStack<int>::iterator it = mstack.begin();
 	MutantStack<int>::iterator ite = mstack.end();
 	++it;
@@ -44,6 +45,39 @@ int main()
 	{
 		std::cout << *it << std::endl;//
 		++it;
+	}
+	std::cout << "\nconst_iterator";
+	MutantStack<int>::const_iterator cit = mstack.cbegin();
+	MutantStack<int>::const_iterator cite = mstack.cend();
+	++cit;
+	--cit;
+	std::cout << std::endl;
+	while (cit != cite)
+	{
+		std::cout << *cit << std::endl;//
+		++cit;
+	}
+	std::cout << "\nreverse_iterator";
+	MutantStack<int>::reverse_iterator rit = mstack.rbegin();
+	MutantStack<int>::reverse_iterator rite = mstack.rend();
+	++rit;
+	--rit;
+	std::cout << std::endl;
+	while (rit != rite)
+	{
+		std::cout << *rit << std::endl;//
+		++rit;
+	}
+	std::cout << "\nconst_reverse_iterator";
+	MutantStack<int>::const_reverse_iterator crit = mstack.rbegin();
+	MutantStack<int>::const_reverse_iterator crite = mstack.rend();
+	++crit;
+	--crit;
+	std::cout << std::endl;
+	while (crit != crite)
+	{
+		std::cout << *crit << std::endl;//
+		++crit;
 	}
 	std::stack<int> s(mstack);
 
