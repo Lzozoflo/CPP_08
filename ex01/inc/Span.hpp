@@ -49,6 +49,7 @@ class Span
 		void	addNumber(int nb);
 		size_t	shortestSpan();
 		size_t	longestSpan();
+		void	addMultiple(unsigned int i, std::vector<int> &vec_to_insert);
 
 		/* bonus */
 		void	addMultiple(unsigned int i, int value);

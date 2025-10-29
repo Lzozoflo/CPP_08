@@ -45,5 +45,15 @@ typename T::iterator	easyfind(T &container, int value)
 }
 
 
+template <typename T>
+typename const T::iterator	easyfind(const T &container, int value)
+{
+	typename T::iterator it;
+
+	it = std::find(container.begin(), container.end(), value);
+	if (it == container.end())
+		throw (NotFoundException());
+	return (it);
+}
 
  #endif

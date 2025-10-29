@@ -118,6 +118,17 @@ void	Span::addMultiple(unsigned int i, int value)
 	}
 }
 
+void	Span::addMultiple(unsigned int i, std::vector<int> &vec_to_insert)
+{
+	if (this->_MaxStock > this->_vec.size() && this->_MaxStock - this->_vec.size()>= i) {
+		this->_vec.insert(this->_vec.end(), vec_to_insert.begin(), vec_to_insert.end());
+	} else {
+		std::ostringstream oss;
+		oss << "Error: capacity not use " << ((this->_vec.size() == 0) ? (this->_MaxStock) : (this->_vec.size() - this->_MaxStock));
+		throw std::out_of_range(oss.str());
+	}
+}
+
 void	Span::print()
 {
 	size_t vecSize = this->_vec.size();

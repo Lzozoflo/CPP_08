@@ -27,9 +27,13 @@ int main()
 
 	try
 	{
-		Span span3(4);
+		std::cout << "\nspan3 print" << std::endl;
+		Span span3(888);
 		std::cout << "shortestSpan() " << span3.shortestSpan() << std::endl;
 		span3.addMultiple(55, 55);
+		int arr[] = {1, 6, 5, 8, 9, 7, 8, 1, 3, 2};
+		std::vector<int> vec(arr, arr + sizeof(arr)/sizeof(arr[0]));
+		span3.addMultiple(vec.size(), vec);
 		span3.print();
 	}
 	catch(const std::exception& e)
