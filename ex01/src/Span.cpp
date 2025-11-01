@@ -26,7 +26,7 @@ Span &Span::operator=(const Span &other)
 Span::~Span( void ) {}
 /* Canonical */
 
-Span::Span( unsigned int N ) : _MaxStock(N) {}
+Span::Span( unsigned int N ) : _MaxStock(static_cast<size_t>(N)) {}
 
 void	Span::addNumber(int nb)
 {

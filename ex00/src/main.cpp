@@ -28,5 +28,17 @@ int main()
 	{
 		std::cout << e.what() << std::endl;
 	}
+
+	int arr[] = {1, 6, 5, 8, 9, 7, 8, 1, 3, 2};
+	const std::vector<int> cvcontainer(arr, arr + sizeof(arr)/sizeof(arr[0]));
+	try
+	{
+		std::vector<int>::const_iterator it = easyfind(cvcontainer, 5);
+		std::cout << *it << std::endl;
+	}
+	catch (std::exception &e)
+	{
+		std::cout << e.what() << std::endl;
+	}
 	return 0;
 }

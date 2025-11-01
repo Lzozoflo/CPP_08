@@ -37,9 +37,9 @@ class Span
 		size_t	_MaxStock;
 		std::vector<int> _vec;
 
-		// }
-		public :
-		// {
+	// }
+	public :
+	// {
 
 		Span &operator=(const Span &other);
 		Span(const Span &other);
